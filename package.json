@@ -1,0 +1,17 @@
+{
+  "name": "hsreedleysc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "type": "module",
+  "author": "marcus",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "google-auth-library": "^7.5.0",
+    "mongodb": "^4.1.0"
+  }
+}
