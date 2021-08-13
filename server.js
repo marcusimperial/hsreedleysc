@@ -59,7 +59,7 @@ app.post('/auth', async (req, res) => {
         const check = await db.checkUser(verify[0]);
         if(check){ //the user exists
             res.cookie('key', 'testkey', { 
-                expires: new Date(Date.now() + 900000),
+                expires: new Date(Date.now() + (60*60*24*365*10)),
                 httpOnly: true, secure: true });
             res.json({status:true})
         } else { //user does not exist
@@ -79,7 +79,7 @@ app.post('/register', async (req, res) => {
             const add = db.addUser(verify, data[1]);
             if(add) { //successful registration
                         res.cookie('key', 'testkey', { 
-                expires: new Date(Date.now() + 900000),
+                expires: new Date(Date.now() + (60*60*24*365*10)),
                 httpOnly: true, secure: true });
             res.json({status:true})
             } else res.json({status:false}); //unsuccessful registration
