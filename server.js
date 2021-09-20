@@ -34,6 +34,10 @@ app.get('/:a', async (req, res) => {
     if(auth){
         if(param === 'projects') 
         res.sendFile('./home/Projects.html', { root: route });
+        else if(param === "abmkickstarter")
+        res.sendFile('./home/ABM-Kickstarter.html', { root: route });
+        else if (param === "gr9studygroups")
+        res.sendFile('./home/REEview-Time.html', { root: route });
         else res.redirect('/')
     } else res.redirect('/login')
 })
