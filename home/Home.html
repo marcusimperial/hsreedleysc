@@ -3,21 +3,44 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="SC WEBSITE, ​Desert trave​l guide, ​Build Great Products, Execom, Follow Us!, About Team​">
+    <meta name="keywords" content="SC WEBSITE">
     <meta name="description" content="">
-    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <meta name="page_type" content="">
     <title>Home</title>
     <link rel="stylesheet" href="nicepage.css" media="screen">
 <link rel="stylesheet" href="Home.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
-    <meta name="generator" content="Nicepage 3.21.3, nicepage.com">
     
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
     <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
     
     
-    
+    <script>
+      async function signOut(){
+          try {
+              const options = {
+                  method: 'POST',
+              };
+              const response = await fetch('/signout', options);
+              const data = await response.json();
+              console.log(data.status);
+              if(data.status) location.reload();
+              else alert('An error occured. Please try again.')
+          } catch {
+              alert('An error occured. Please try again.')
+          }
+      }
+      </script>
+      
+      
+               <!--DESIGNS-->
+       <meta property="og:image" content="https://drive.google.com/uc?export=view&id=1xtedUpFaXTNhTvuZA_z4l33258OT44tM">
+       <meta property="og:image:type" content="image/jpeg">
+       <meta property="og:image:width" content="400">
+       <meta property="og:image:height" content="400">
+       <link rel="icon" type="image/png" href="https://drive.google.com/uc?export=view&id=1xtedUpFaXTNhTvuZA_z4l33258OT44tM"/>  
+      
     
     
     
@@ -58,18 +81,18 @@
             </a>
           </div>
           <div class="u-custom-menu u-nav-container">
-            <ul class="u-custom-font u-nav u-spacing-2 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-border-2 u-border-active-grey-90 u-border-hover-grey-50 u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="Home.html" style="padding: 10px 20px;">Home</a>
-</li><li class="u-nav-item"><a class="u-border-2 u-border-active-grey-90 u-border-hover-grey-50 u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="Projects.html" style="padding: 10px 20px;">Projects</a>
-</li><li class="u-nav-item"><a class="u-border-2 u-border-active-grey-90 u-border-hover-grey-50 u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" style="padding: 10px 20px;">Log Out</a>
+            <ul class="u-custom-font u-nav u-spacing-2 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-border-2 u-border-active-grey-90 u-border-hover-grey-50 u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" style="padding: 10px 20px;">Home</a>
+</li><li class="u-nav-item"><a class="u-border-2 u-border-active-grey-90 u-border-hover-grey-50 u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="https://hsredleysc.com/projects" style="padding: 10px 20px;">Projects</a>
+</li><li class="u-nav-item"><a class="u-border-2 u-border-active-grey-90 u-border-hover-grey-50 u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" style="padding: 10px 20px;" onclick="signOut()">Log Out</a>
 </li></ul>
           </div>
           <div class="u-custom-menu u-nav-container-collapse">
             <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
               <div class="u-sidenav-overflow">
                 <div class="u-menu-close"></div>
-                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.html" style="padding: 10px 20px;">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Projects.html" style="padding: 10px 20px;">Projects</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" style="padding: 10px 20px;">Log Out</a>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" style="padding: 10px 20px;">Home</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="https://hsredleysc.com/projects" style="padding: 10px 20px;">Projects</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" style="padding: 10px 20px;" onclick="signOut()">Log Out</a>
 </li></ul>
               </div>
             </div>
@@ -122,7 +145,7 @@
           <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FReedleySC%2Fposts%2F1007598670058829&amp;show_text=true&amp;width=500" width="570" height="659" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
         </div>
         <div class="u-border-3 u-border-white u-expanded-width-sm u-expanded-width-xs u-line u-line-horizontal u-line-1"></div>
-        <a href="Projects.html" data-page-id="2705919693" class="u-border-none u-btn u-btn-round u-button-style u-custom-color-2 u-custom-font u-hidden-lg u-hidden-md u-hidden-sm u-hidden-xl u-hover-custom-color-2 u-radius-6 u-btn-2">READ MORE</a>
+        <a href="https://hsredleysc.com/projects" data-page-id="2705919693" class="u-border-none u-btn u-btn-round u-button-style u-custom-color-2 u-custom-font u-hidden-lg u-hidden-md u-hidden-sm u-hidden-xl u-hover-custom-color-2 u-radius-6 u-btn-2">READ MORE</a>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-custom-color-4 u-section-2" id="carousel_501f">
@@ -2800,19 +2823,5 @@ c0-7.4,3.4-18.8,18.8-18.8h13.8v15.4H75.5z"></path></svg></span>
     
     
     
-    <footer class="u-align-center u-clearfix u-custom-color-1 u-footer u-footer" id="sec-697b"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-        <p class="u-custom-font u-small-text u-text u-text-variant u-text-1">Reedley International School High School Student Council SY 2021-2022</p>
-      </div></footer>
-    <section class="u-backlink u-clearfix u-grey-80">
-      <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
-        <span>Website Templates</span>
-      </a>
-      <p class="u-text">
-        <span>created with</span>
-      </p>
-      <a class="u-link" href="https://nicepage.com/" target="_blank">
-        <span>Website Builder Software</span>
-      </a>. 
-    </section>
   </body>
 </html>
