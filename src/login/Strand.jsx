@@ -1,12 +1,15 @@
-import { useState } from "react";
-import { registerUser  } from "./requests";
+import { useEffect } from "react";
 
-export default function Section({ token, section }) {
+export default function Strand({ token, section, setStrand }) {
     const title = 'Select your Strand';
     const values = [ 'ABM','STEM','HUMSS','GA' ];
-    const [strand, setStrand] = useState('');
+    
+    useEffect(() => {
+        if(!(token && section && (section.includes(11) || section.includes(12))))
+        setStrand('');
+    })
 
-
+    if (token && section && (section.includes(11) || section.includes(12)))
     return (
         <>
             <div id='strand' className='seldivs'>
@@ -20,14 +23,11 @@ export default function Section({ token, section }) {
                     )}
             </select>
             </div>
-
-            {
-                strand && <input type='button' value='Submit' onClick={() => {registerUser(token, section, strand)}}></input>
-            }
         </>
-
-
-
     )
+    else return (<></>);
+
+    
+
 }
 

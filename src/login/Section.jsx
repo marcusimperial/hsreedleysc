@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { registerUser } from "./requests";
 import Strand from "./Strand";
 
-export default function Section({ token }) {
+export default function Section({ token, setSection }) {
     const title = 'Select your Level and Section';
     const values = [
         '7 Georgetown','7 Stanford','7 Berkeley',
@@ -12,9 +11,8 @@ export default function Section({ token }) {
         '11 Maya Angelou','11 Galileo',
         '12 Leonardo Da Vinci', '12 Marie Curie'
     ];
-    const [section, setSection] = useState('');
 
-
+    if(token)
     return (
         <>
             <div id='lvlsec' className='seldivs'>
@@ -29,14 +27,8 @@ export default function Section({ token }) {
             </select>
             </div>
 
-            {
-                section.includes(11) || section.includes (12) ? <Strand token={token} section={section}/> :
-                (section && <input type='button' value='Submit' onClick={() => {registerUser(token, section)}}></input>)
-            }
         </>
-
-
-
     )
+    else return (<>{setSection('')}</>)
 }
 
