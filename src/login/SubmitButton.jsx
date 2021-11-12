@@ -7,7 +7,7 @@ const SubmitButton = ({ token, section, strand, setSubmit}) => {
     if(section && (condition1 || condition2))
     return (
         <>
-            <input type='button' value='Submit' onClick={() => {setSubmit(true); registerUser(token, section, strand)}}></input>
+            <input type='button' value='Submit' onClick={() => {registerUser(token, section, strand)}}></input>
         </>
     )
     else return (<></>)

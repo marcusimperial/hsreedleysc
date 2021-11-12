@@ -3,6 +3,8 @@ import GoogleButton from './GoogleButton';
 import Section from './Section';
 import Strand from './Strand';
 import SubmitButton from './SubmitButton'
+import Loader from './Loader';
+
 import { registerUser } from "./requests";
 
 const Login = () => {
@@ -20,6 +22,7 @@ const Login = () => {
             <Section token={token} setSection={setSection} />
             <Strand token={token} section={section} setStrand={setStrand} />
             <SubmitButton token={token} section={section} strand={strand} />
+            <Loader />
         </>
     )
 }

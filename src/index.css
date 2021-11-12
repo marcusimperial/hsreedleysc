@@ -1,5 +1,21 @@
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
+.loader {
+  text-align: center;
   display: block;
+  margin: auto;
+  border: 10px solid #f3f3f3; /* Light grey */
+  border-top: 10px solid black; /* Blue */
+  border-radius: 50%;
+  width: 125px;
+  height: 125px;
+  animation: spin 500ms linear infinite;
+}
+
+#sublbl {
+  text-shadow: 1px 1px 10px black, 1px 1px 10px black;
+  text-align: center;
+  display: block;
+  margin: auto;
+  color: #efecec;
+  font-size: 30px;
+  line-height: 40px;
 }
