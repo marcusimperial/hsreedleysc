@@ -6,12 +6,12 @@ import { useEffect, useState } from 'react';
 
 export default function Button({token, submit, setToken, setSubmit, setRegister}){
 
-    const [googleAuth, setGoogleAuth] = useState();
-    const [gapi, setGapi] = useState();
-
     const onSignIn = async (user) => {
 
-        if(document.readyState !== 'complete') return;
+        if(document.readyState !== 'complete') {
+          console.log(googleAuth);
+          return;
+        };
         
         const token = user.getAuthResponse().id_token;
         setToken(token);
@@ -56,14 +56,13 @@ export default function Button({token, submit, setToken, setSubmit, setRegister}
         window.onGoogleScriptLoad = () => { // (Ref. 1)
          
           const _gapi = window.gapi; // (Ref. 2)
-          setGapi(_gapi);
           
           _gapi.load('auth2', () => { // (Ref. 3)
             (async () => { 
               const _googleAuth = await _gapi.auth2.init({ // (Ref. 4)
                client_id: clientId
               });
-              setGoogleAuth(_googleAuth);
+              await _gapi.auth2.getAuthInstance().signOut();
               renderSigninButton(_gapi); // (Ref. 6)
             })();
           });
@@ -77,8 +76,13 @@ export default function Button({token, submit, setToken, setSubmit, setRegister}
     if(!token && !submit)
     return (
         <>
-            <div id="google-signin"></div>
-            <button className='btn-primary' onClick={logOut}>Log Out</button>
+          <header className="container">
+            <section id="sec" className="container">
+              <h1 id="mainlbl">The<br/>SC Website</h1>
+              <div className="g-signin2" id="google-signin"></div>
+            </section>
+          </header>
+            
         </>
     )
     else return (<></>)
