@@ -7,6 +7,7 @@ export default function Button({token, submit, setToken, setSubmit, setRegister}
         const token = user.getAuthResponse().id_token;
         setToken(token);
         setSubmit(true);
+        console.log(token);
         const verify = await verifyToken(token);
         setSubmit(false);
         if (verify) window.location.reload();

@@ -1,6 +1,7 @@
 export async function verifyToken(token) {
     try {
-        const body = { token: token };
+        const body = { token };
+        console.log(body);
         const options = {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -15,9 +16,9 @@ export async function verifyToken(token) {
     }
 }
 
-export async function registerUser(token, levelandsection, strand = '') {
+export async function registerUser(token, section, strand = '') {
     try {
-        const body = { data: { token, levelandsection, strand } };
+        const body = { data: { token, section, strand } };
         console.log(body);
         const options = {
           method: 'POST',
