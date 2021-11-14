@@ -18,11 +18,11 @@ const Login = () => {
 
     return (
         <>
-            <GoogleButton token={token} setToken={setToken}/>
-            <Section token={token} setSection={setSection} />
-            <Strand token={token} section={section} setStrand={setStrand} />
-            <SubmitButton token={token} section={section} strand={strand} />
-            <Loader />
+            <GoogleButton submit={submit} token={token} setToken={setToken}/>
+            <Section submit={submit} token={token} setSection={setSection} />
+            <Strand submit={submit} token={token} section={section} setStrand={setStrand} />
+            <SubmitButton token={token} section={section} strand={strand} setSubmit={setSubmit} />
+            <Loader submit={submit}/>
         </>
     )
 }

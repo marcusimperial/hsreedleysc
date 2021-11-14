@@ -1,5 +1,6 @@
 import '../index.css'
-const Loader = () => {
+const Loader = ({ submit }) => {
+    if(submit)
     return (
         <>
             <div id="loaderdiv">
@@ -8,6 +9,8 @@ const Loader = () => {
             </div>
         </>
     )
+    else return (<></>);
+    
 }
 
 export default Loader

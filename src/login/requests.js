@@ -1,4 +1,4 @@
-export async function a(token) {
+export async function verifyToken(token) {
     try {
         const body = { token: token };
         const options = {
@@ -15,7 +15,7 @@ export async function a(token) {
     }
 }
 
-export async function b(token, levelandsection, strand) {
+export async function registerUser(token, levelandsection, strand = '') {
     try {
         const body = { data: { token, levelandsection, strand } };
         console.log(body);
@@ -31,8 +31,4 @@ export async function b(token, levelandsection, strand) {
     } catch {
         return false
     }
-}
-
-export async function registerUser(token, section, strand = '') {
-    alert(`TOKEN: ${token} SECTION: ${section} STRAND: ${strand}`)
 }

@@ -1,15 +1,15 @@
 import { useEffect } from "react";
 
-export default function Strand({ token, section, setStrand }) {
+export default function Strand({ token, section, submit, setStrand }) {
     const title = 'Select your Strand';
     const values = [ 'ABM','STEM','HUMSS','GA' ];
     
     useEffect(() => {
-        if(!(token && section && (section.includes(11) || section.includes(12))))
+        if(!(!submit && token && section && (section.includes(11) || section.includes(12))))
         setStrand('');
     })
 
-    if (token && section && (section.includes(11) || section.includes(12)))
+    if (!submit && token && section && (section.includes(11) || section.includes(12)))
     return (
         <>
             <div id='strand' className='seldivs'>

@@ -1,18 +1,14 @@
 import { Navbar } from './components/Navbar';
-import LoginButton from './login/GoogleButton';
-import { Routes, Route} from 'react-router-dom'
-import Page from './components/Page';
+import { Routes, Route } from 'react-router-dom'
 import Login from './login/Login';
 
 function App() {
 
   return (
     <>
-    <Login/>
     <Routes>
-          <Route exact path='/yes' element={<Page/>}/>
-          <Route exact path='/about' element={<Navbar/>}/>
-
+          <Route exact path='/login' element={<Login/>}/>
+          <Route exact path='/' element={<Navbar/>}/>
     </Routes>
     </>
 
