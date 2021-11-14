@@ -1,7 +1,4 @@
-import { useState } from "react";
-import Strand from "./Strand";
-
-export default function Section({ token, submit, setSection }) {
+export default function Section({ token, submit, register, setSection }) {
     const title = 'Select your Level and Section';
     const values = [
         '7 Georgetown','7 Stanford','7 Berkeley',
@@ -12,7 +9,7 @@ export default function Section({ token, submit, setSection }) {
         '12 Leonardo Da Vinci', '12 Marie Curie'
     ];
 
-    if(token && !submit)
+    if(token && register && !submit)
     return (
         <>
             <div id='lvlsec' className='seldivs'>

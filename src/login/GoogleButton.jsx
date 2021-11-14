@@ -1,14 +1,16 @@
-import { useState } from 'react'
 import { GoogleLogin } from 'react-google-login';
+import { verifyToken } from './requests';
 
-import Section from './Section';
+export default function Button({token, submit, setToken, setSubmit, setRegister}){
 
-const Button = ({token, submit, setToken}) => {
-
-    const onSignIn = (user) => {
+    const onSignIn = async (user) => {
         const token = user.getAuthResponse().id_token;
         setToken(token);
-        const
+        setSubmit(true);
+        const verify = await verifyToken(token);
+        setSubmit(false);
+        if (verify) window.location.reload();
+        else setRegister(true);
     }
 
     const clientId = '724396208046-174g1j7ib3vhl3foa80j0sd4hvtcv3p9.apps.googleusercontent.com';
@@ -21,5 +23,3 @@ const Button = ({token, submit, setToken}) => {
     )
     else return (<></>)
 }
-
-export default Button

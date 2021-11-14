@@ -1,5 +1,4 @@
-import '../index.css'
-const Loader = ({ submit }) => {
+export default function Loader({ submit }) {
     if(submit)
     return (
         <>
@@ -10,7 +9,5 @@ const Loader = ({ submit }) => {
         </>
     )
     else return (<></>);
-    
-}
 
-export default Loader
+}
