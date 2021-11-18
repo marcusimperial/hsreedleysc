@@ -3,7 +3,7 @@ export const loadGoogleScript = () => {
     // Loads the Google JavaScript Library
     (function () {
         const id = 'google-js';
-        const src = 'https://apis.google.com/js/platform.js'; // (Ref. 1)
+        const src = '  https://apis.google.com/js/platform.js?onload=googleInit'; // (Ref. 1)
         
         // We have at least one script (React)
         const firstJs = document.getElementsByTagName('script')[0]; // (Ref. 2)

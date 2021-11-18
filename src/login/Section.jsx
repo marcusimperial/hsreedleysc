@@ -12,6 +12,7 @@ export default function Section({ token, submit, register, setSection }) {
     if(token && register && !submit)
     return (
         <>
+            <div className="space"></div>
             <div id='lvlsec' className='seldivs'>
                 <label className='selheaders'>{title}</label>
                 <br />

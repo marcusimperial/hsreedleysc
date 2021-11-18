@@ -4,12 +4,11 @@ import { registerUser } from './requests';
 import { loadGoogleScript } from './google.js';
 import { useEffect, useState } from 'react';
 
-export default function Button({token, submit, setToken, setSubmit, setRegister}){
+export default function Button({setGapi, token, submit, setToken, setSubmit, setRegister}){
 
     const onSignIn = async (user) => {
 
         if(document.readyState !== 'complete') {
-          console.log(googleAuth);
           return;
         };
         
@@ -62,6 +61,8 @@ export default function Button({token, submit, setToken, setSubmit, setRegister}
               const _googleAuth = await _gapi.auth2.init({ // (Ref. 4)
                client_id: clientId
               });
+              console.log(_googleAuth);
+              setGapi(_gapi);
               await _gapi.auth2.getAuthInstance().signOut();
               renderSigninButton(_gapi); // (Ref. 6)
             })();
@@ -79,7 +80,7 @@ export default function Button({token, submit, setToken, setSubmit, setRegister}
           <header className="container">
             <section id="sec" className="container">
               <h1 id="mainlbl">The<br/>SC Website</h1>
-              <div className="g-signin2" id="google-signin"></div>
+              <div className="googlebutton" id="google-signin"></div>
             </section>
           </header>
             

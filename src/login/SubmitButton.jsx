@@ -17,7 +17,10 @@ export default function SubmitButton({ token, section, submit, strand, register,
     if(token && section && !submit && register && (condition1 || condition2))
     return (
         <>
-            <input type='button' value='Submit' onClick={() => {onRegister()}}></input>
+        <div id="submit" className="seldivs">
+            <input className='submit' type='button' value='Submit' onClick={() => {onRegister()}}></input>
+        </div>
+            
         </>
     )
     else return (<></>)

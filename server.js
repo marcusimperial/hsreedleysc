@@ -39,6 +39,10 @@ app.get('*', async (req, res) => {
 });
 
 
+app.post('/signout', async (req, res) => {
+    res.clearCookie('key');
+    res.json({status:true});
+});
 
 app.post('/auth', async (req, res) => {
   console.log(req.body);
