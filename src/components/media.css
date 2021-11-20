@@ -1,72 +1,73 @@
-/* Tables and under */
-@media (max-width: 768px) {
-  .grid,
-  .post .grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
+@media only screen and (max-width: 767px) {
+  body:before {
+    content: "";
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    background-image: none;
   }
 
-  .cli .grid > *:first-child {
-    grid-column: 1;
-    grid-row: 1;
-  }
-}
-
-/* Mobile */
-
-@media (max-width: 500px) {
   .navbar {
-    height: 110px;
+    background-color: var(--dark);
+    position: relative;
+    height: auto !important;
   }
 
-  .navbar .flex {
-    flex-direction: column;
+  .navbar #myLinks {
+    display: none;
   }
 
   .navbar ul {
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.1);
+    display: block !important;
   }
+
+  .container {
+    margin: inherit !important;
+    overflow: inherit !important;
+    padding: inherit !important;
+  }
+
+  .flex {
+    display: inherit !important;
+    justify-content: inherit !important;
+    align-items: inherit !important;
+    height: inherit !important;
+  }
+
+  .navbar .flex {
+    justify-content: inherit !important;
+  }
+
+  .navbar a {
+    color: var(--light);
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    display: block;
+  }
+
+  .navbar a:hover {
+    color: none !important;
+    border-bottom: none !important;
+  }
+
+  .mobile {
+    display: block;
+  }
+
+  #myLinks {
+    display: none !important;
+}
 }
 
-/* Animations */
+/* Large Devices, Wide Screens */
+@media only screen and (min-width: 1200px) {
 
-@keyframes slideInFromLeft {
-  0% {
-    transform: translateX(-100%);
-  }
-
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInFromRight {
-  0% {
-    transform: translateX(100%);
-  }
-
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInFromTop {
-  0% {
-    transform: translateY(-100%);
-  }
-
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInFromBottom {
-  0% {
-    transform: translateY(100%);
-  }
-
-  100% {
-    transform: translateX(0);
-  }
+    #myLinks {
+        display: block !important;
+    }
 }

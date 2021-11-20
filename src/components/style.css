@@ -26,3 +26,10 @@
   border-bottom: 2px var(--light) solid;
 }
 
+.mobile {
+  display: none;
+}
+
+#myLinks {
+    display: block !important;
+}

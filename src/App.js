@@ -2,6 +2,7 @@ import { Navbar } from './components/Navbar';
 import { Routes, Route } from 'react-router-dom'
 import Login from './login/Login';
 import Page from './components/404';
+import Test from './components/Test';
 import { useState, useEffect } from 'react';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route exact path='/login' element={<Login setGapi={setGapi}/>}/>
         <Route exact path='/' element={<Navbar gapi={gapi}/>}/>
+        <Route exact path='/s' element={<Test/>}/>
         <Route path="*" element={<Page/>}/>
       </Routes>
     </>
