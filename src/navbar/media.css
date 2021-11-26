@@ -17,10 +17,6 @@
     height: auto !important;
   }
 
-  .navbar #myLinks {
-    display: none;
-  }
-
   .navbar ul {
     display: block !important;
   }
@@ -43,6 +39,7 @@
   }
 
   .navbar a {
+    cursor: pointer;
     color: var(--light);
     padding: 14px 16px;
     text-decoration: none;
@@ -59,15 +56,7 @@
     display: block;
   }
 
-  #myLinks {
-    display: none !important;
-}
-}
-
-/* Large Devices, Wide Screens */
-@media only screen and (min-width: 1200px) {
-
-    #myLinks {
-        display: block !important;
-    }
+  .dropdown-content {
+    margin-top: 0px !important;
+  }
 }

@@ -1,10 +1,9 @@
-import { GoogleLogin } from 'react-google-login';
 import { verifyToken } from './requests';
 import { registerUser } from './requests';
 import { loadGoogleScript } from './google.js';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
-export default function Button({setGapi, token, submit, setToken, setSubmit, setRegister}){
+export default function Button({ token, submit, setToken, setSubmit, setRegister}){
 
     const onSignIn = async (user) => {
 
@@ -62,7 +61,6 @@ export default function Button({setGapi, token, submit, setToken, setSubmit, set
                client_id: clientId
               });
               console.log(_googleAuth);
-              setGapi(_gapi);
               await _gapi.auth2.getAuthInstance().signOut();
               renderSigninButton(_gapi); // (Ref. 6)
             })();
@@ -71,7 +69,7 @@ export default function Button({setGapi, token, submit, setToken, setSubmit, set
         
         // Ensure everything is set before loading the script
         loadGoogleScript(); // (Ref. 9)
-    }, []);
+    });
 
 
     if(!token && !submit)

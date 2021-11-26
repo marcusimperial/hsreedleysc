@@ -1,0 +1,87 @@
+@import url("http://fonts.cdnfonts.com/css/noir");
+
+:root {
+  --dark: #435772;
+  --mid: #b8b8b8;
+  --light: #fcf3eb;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Noir", sans-serif;
+  color: black;
+  line-height: 1.6;
+  background-image: none;
+  background-color: var(--light);
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+h1, h2 {
+  font-weight: 300;
+  line-height: 1.2;
+  margin: 10px 0;
+}
+
+p {
+  margin: 10px 0;
+}
+
+img {
+  width: 100%;
+}
+
+.container {
+  margin: 0 auto;
+  overflow: auto;
+  padding: 0 40px;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.navbar {
+  background-color: var(--dark);
+  height: 70px;
+  font-size: 20px;
+}
+
+.navbar .flex {
+  justify-content: space-between;
+}
+
+.navbar ul {
+  display: flex;
+}
+
+.navbar a {
+  font-size: 20px;
+  color: var(--light);
+  padding: 10px;
+  margin: 0 5px;
+}
+
+.navbar a:hover {
+  color: var(--mid);
+  border-bottom: 2px var(--light) solid;
+}
+
+.mobile {
+  display: none;
+}

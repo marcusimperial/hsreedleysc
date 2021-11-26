@@ -1,23 +1,23 @@
-import { Navbar } from './components/Navbar';
+import { Navbar } from './navbar/Navbar';
 import { Routes, Route } from 'react-router-dom'
 import Login from './login/Login';
-import Page from './components/404';
-import Test from './components/Test';
+import Page from './404';
 import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 function App() {
 
-  const [gapi, setGapi] = useState('');
+  const location = useLocation();
   useEffect(() => {
-    console.log(gapi);
+    
+    console.log(location.pathname);
   })
 
   return (
     <>
       <Routes>
-        <Route exact path='/login' element={<Login setGapi={setGapi}/>}/>
-        <Route exact path='/' element={<Navbar gapi={gapi}/>}/>
-        <Route exact path='/s' element={<Test/>}/>
+        <Route exact path='/login' element={<Login />}/>
+        <Route exact path='/' element={<Navbar />}/>
         <Route path="*" element={<Page/>}/>
       </Routes>
     </>
