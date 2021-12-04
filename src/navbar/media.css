@@ -14,29 +14,26 @@
   .navbar {
     background-color: var(--dark);
     position: relative;
-    height: auto !important;
+    height: auto;
   }
 
   .navbar ul {
-    display: block !important;
+    display: block;
   }
 
   .container {
-    margin: inherit !important;
-    overflow: inherit !important;
-    padding: inherit !important;
+    margin: inherit;
+    overflow: inherit;
+    padding: inherit;
   }
 
   .flex {
-    display: inherit !important;
-    justify-content: inherit !important;
-    align-items: inherit !important;
-    height: inherit !important;
+    display: inherit;
+    justify-content: inherit;
+    align-items: inherit;
+    height: inherit;
   }
 
-  .navbar .flex {
-    justify-content: inherit !important;
-  }
 
   .navbar a {
     cursor: pointer;
@@ -47,16 +44,12 @@
     display: block;
   }
 
-  .navbar a:hover {
-    color: none !important;
-    border-bottom: none !important;
-  }
-
   .mobile {
     display: block;
   }
 
   .dropdown-content {
-    margin-top: 0px !important;
+    margin-top: 0px;
+    margin-left: 20px;
   }
 }

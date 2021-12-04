@@ -21,15 +21,15 @@ export function Navbar() {
     
     useEffect(() => {
         import('./basic.css');
-        import('./media.css');
         import('./dropdown.css');
+        import('./media.css');
+        
         document.title = 'Home';
         window.onresize = sizing;
-        sizing();
     })
 
 
-    const a = [{name: 'sada', route: 'sdsd'}]
+    const a = [{name: "The Valentine's Day FUndraiser", route: 'sdsd'}]
 
     return (
         

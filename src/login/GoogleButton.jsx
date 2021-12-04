@@ -49,6 +49,8 @@ export default function Button({ token, submit, setToken, setSubmit, setRegister
       
       
     useEffect(() => {
+
+
         
         // Window.gapi is available at this point
         window.onGoogleScriptLoad = () => { // (Ref. 1)

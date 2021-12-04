@@ -18,7 +18,7 @@ export default function Bar({ name, pages = []}){
     return (
         <>
             <div className="dropdown">
-                <li id={id3} className="dropbtn" onClick={() => { if(pages.length) document.getElementById(id).classList.toggle("show") }} ><a href="">{name}</a></li>
+                <li id={id3} className="dropbtn" onClick={() => { if(pages.length) document.getElementById(id).classList.toggle("show") }} ><a>{name}</a></li>
                 <div className="dropdown-content" id={id}>
                     { pages.map(({ name, route }) => ( <Link key={`link-${crypto.randomBytes(16).toString("hex")}`} className={id2} to={route}>{name}</Link> )) } 
                 </div>

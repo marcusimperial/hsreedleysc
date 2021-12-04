@@ -75,8 +75,8 @@ body {
   border: 10px solid #f3f3f3; /* Light grey */
   border-top: 10px solid black; /* Blue */
   border-radius: 50%;
-  width: 125px;
-  height: 125px;
+  width: 200px;
+  height: 200px;
   animation: spin 500ms linear infinite;
 }
 

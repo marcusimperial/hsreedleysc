@@ -4,8 +4,7 @@ import Section from './Section';
 import Strand from './Strand';
 import SubmitButton from './SubmitButton'
 import Loader from './Loader';
-import './style.css';
-import './responsive.css';
+
 
 export default function Login() {
 
@@ -17,6 +16,8 @@ export default function Login() {
     const [register, setRegister] = useState(false);
 
     useEffect(() => {
+        import('./style.css');
+        import('./responsive.css');
         document.title = 'Login'
     });
 

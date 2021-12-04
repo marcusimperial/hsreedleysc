@@ -2,7 +2,7 @@
   cursor: pointer;
   border: none;
   outline: none;
-  color: white;
+  color: var(--dark);
   background-color: inherit;
   font-family: inherit;
 }
@@ -11,7 +11,8 @@
   display: none;
   position: absolute;
   overflow: auto;
-  background-color: white;
+  color: var(--light);
+  background-color: var(--dark);
   height: 150px;
   margin-top: 20px;
   min-width: 100px;
@@ -32,7 +33,7 @@
 
 .dropdown-content a {
   float: none;
-  color: var(--dark);
+  color: var(--light);
   font-size: 15px;
   padding: 10px 10px;
   text-decoration: none;
@@ -41,7 +42,7 @@
 }
 
 .dropdown-content a:hover {
-  background-color: #ddd;
+
 }
 
 .show {

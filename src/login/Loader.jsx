@@ -1,4 +1,10 @@
+import { useEffect } from "react";
+
 export default function Loader({ submit }) {
+    useEffect(() => {
+        import('./style.css');
+        import('./responsive.css');
+    })
     if(submit)
     return (
         <>
