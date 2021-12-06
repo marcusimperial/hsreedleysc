@@ -34,15 +34,11 @@
 .dropdown-content a {
   float: none;
   color: var(--light);
-  font-size: 15px;
+  font-size: 20px;
   padding: 10px 10px;
   text-decoration: none;
   display: block;
   text-align: left;
-}
-
-.dropdown-content a:hover {
-
 }
 
 .show {

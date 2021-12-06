@@ -34,14 +34,19 @@
     height: inherit;
   }
 
-
-  .navbar a {
+  .navbar a,
+  button {
     cursor: pointer;
     color: var(--light);
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 20px;
     display: block;
+  }
+
+  .navbar button:hover,
+  a:hover {
+    color: var(--mid);
+    border-bottom: 2px var(--dark) solid;
   }
 
   .mobile {

@@ -14,13 +14,16 @@ export function Navbar() {
     }
 
     const mobile = () => {
-        var x = document.querySelector(".myLinks");
+        let x = document.querySelector(".myLinks");
+        console.log(x.style.display);
+        
         if (x.style.display === "block") x.style.display = "none";
-        else x.style.display = "block";
+        else if (x.style.display === "none") x.style.display = "block";
+        else x.style.display = "none";
     }
     
     useEffect(() => {
-        import('./basic.css');
+        import('./main.css');
         import('./dropdown.css');
         import('./media.css');
         
@@ -35,18 +38,15 @@ export function Navbar() {
         
         <div className="navbar">
             <div className="container flex">
-                <a className="mobile" onClick={mobile}><AiOutlineMenu size={30} /></a>
+                <button className="mobile" onClick={mobile}><AiOutlineMenu size={30} /></button>
                 <nav className="myLinks">
                     <ul>
                         <li><Link to="projects.html">HOME</Link></li>
                         <li><Link to="projects.html">ABOUT</Link></li>
-                    
-                        <Bar name="EVENTS" pages={a} />
-                        <Bar name="PROJECTS" pages={a} />
-                        <Bar name="PARTIES" pages={a} />
-
-                        <li><a href="" onClick={signOut}>SIGN OUT</a></li>
-
+                        <li><Bar name="EVENTS" pages={a}/></li>
+                        <li><Bar name="PROJECTS" pages={a}/></li>
+                        <li><Bar name="PARTIES" pages={a}/></li>
+                        <li><button onClick={signOut}>SIGN OUT</button></li>
                     </ul>
                 </nav>
             </div>

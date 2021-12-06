@@ -2,7 +2,7 @@ import { Navbar } from './navbar/Navbar';
 import { Routes, Route } from 'react-router-dom'
 import Login from './login/Login';
 import Page from './404';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import './index.css';
