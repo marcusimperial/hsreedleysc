@@ -41,16 +41,14 @@ export default function Button({ token, submit, setToken, setSubmit, setRegister
 
     return (
         <>
+              <GoogleLogin
+      clientId={clientId}
+      style={{width: '700', height: '200'}}
+      buttonText="Logout"
 
-    <GoogleLogin height={40} width={500}
-    clientId={clientId}
-    render={renderProps => (
-      <GoogleButton height={40} width={500} label='Sign in with Risfamily' type='light' onClick={renderProps.onClick}/>
-    )}
-    onSuccess={onSignIn}
-    cookiePolicy={'single_host_origin'}
-  />
-
+    ></GoogleLogin>
+              
+    
         </>
     )
 

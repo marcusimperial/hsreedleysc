@@ -10,6 +10,12 @@
   font-weight: 500;
 }
 
+.login {
+  width: 325px;
+  height: 1000px;
+
+}
+
 #sublbl {
   text-shadow: 1px 1px 10px black, 1px 1px 10px black;
   text-align: center;
