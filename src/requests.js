@@ -8,8 +8,10 @@ export const userLogIn = async (token) => {
         };
         const response = await fetch('/login', options);
         const data = await response.json();
+        alert(data.status);
         if(data.status) return true;
-        else return false
+        else return false;
+
     } catch {
         return false;
     }
@@ -20,8 +22,9 @@ export const userLogOut = async () => {
         const options = { method: 'POST' };
         const response = await fetch('/logout', options);
         await response.json();
-        window.location.reload();
-    } catch {
+        window.location.replace('/login')
+    } catch (e) {
+        console.log(e);
         window.location.reload();
     }
 }

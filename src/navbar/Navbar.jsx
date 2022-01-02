@@ -2,9 +2,16 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { AiOutlineMenu } from 'react-icons/ai';
 import Bar from './Bar';
-import { signOut } from './requests';
+import { userLogOut } from '../requests.js';
+import { signOut, getAuth } from "firebase/auth";
 
 export function Navbar() {
+
+    const signOutUser = async () => {
+        const authObj = getAuth();
+        await signOut(authObj);
+        await userLogOut();
+    }
 
     const sizing = () => {
         const mq = window.matchMedia( "(max-width: 760px)" );
@@ -46,7 +53,7 @@ export function Navbar() {
                         <li><Bar name="EVENTS" pages={a}/></li>
                         <li><Bar name="PROJECTS" pages={a}/></li>
                         <li><Bar name="PARTIES" pages={a}/></li>
-                        <li><button onClick={signOut}>SIGN OUT</button></li>
+                        <li><button onClick={signOutUser}>SIGN OUT</button></li>
                     </ul>
                 </nav>
             </div>

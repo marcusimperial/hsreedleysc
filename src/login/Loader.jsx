@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 
-export default function Loader({ submit }) {
+export default function Loader({ loader }) {
     useEffect(() => {
         import('./style.css');
         import('./responsive.css');
     })
-    if(submit)
+    if(loader)
     return (
         <>
             <div className="space"></div>

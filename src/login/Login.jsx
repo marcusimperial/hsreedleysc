@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import GoogleButton from './GoogleButton';
-
+import Loader from './Loader';
 
 
 export default function Login() {
@@ -11,6 +11,7 @@ export default function Login() {
     const [strand, setStrand] = useState('');
     const [submit, setSubmit] = useState(false);
     const [register, setRegister] = useState(false);
+    const [loader, setLoader] = useState(false);
 
     useEffect(() => {
         import('./style.css');
@@ -20,7 +21,8 @@ export default function Login() {
 
     return (
         <>
-            <GoogleButton submit={submit} token={token} setToken={setToken} setRegister={setRegister} setSubmit={setSubmit} />
+            <Loader loader={loader} />
+            <GoogleButton setLoader={setLoader} />
         </>
     )
 }

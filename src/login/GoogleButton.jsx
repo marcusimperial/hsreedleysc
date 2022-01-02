@@ -1,9 +1,9 @@
 import '../firebase.js';
 import { userLogIn, userLogOut } from '../requests.js';
 import { useEffect } from 'react'
-import { signInWithRedirect, signOut, GoogleAuthProvider, getAuth, onAuthStateChanged } from "firebase/auth";
+import {signInWithRedirect, signOut, GoogleAuthProvider, getAuth, getRedirectResult } from "firebase/auth";
 
-export default function NewGoogleButton(){
+export default function NewGoogleButton({ setLoader }){
     const authObj = getAuth();
     const signOutUser = async () => {
         await signOut(authObj);
@@ -13,18 +13,24 @@ export default function NewGoogleButton(){
         const provider = new GoogleAuthProvider();
         try {
             const a = await signInWithRedirect(authObj, provider);
-            alert(a.user);
         } catch (e) {
             alert(e);
         }
     }
 
-    const authState = (user) => {
-        if (user) userLogIn(user.accessToken);
-        else alert('signed out');
-    }
+    useEffect(() => {
+        const renderResult = async () => {
+            const result = await getRedirectResult(authObj);
+            console.log(result.user.accessToken);
+            if (result) userLogIn(result.user.accessToken);
+        }
+        renderResult();
 
-    onAuthStateChanged(authObj, authState)
+    })
+    
+
+
+
 
     return (
         <div>

@@ -1,20 +1,20 @@
 import express from 'express';
 import { generateCookie, revokeSessionCookie } from './firebase-server.js';
-const app = express();
-app.use(express.urlencoded({extended: true}));
-app.use(express.json());
 
 const Router = express.Router();
-
+const app = express();
+import cookieParser from 'cookie-parser';
+app.use(cookieParser());
 Router.post('/login', async (req, res) => {
     const token = req.body.token;
+    console.log(token);
     console.log('LOGIN RECEIVED');
     const sessionCookie = await generateCookie(token);
-    console.log(`LOGIN STATUS: ${sessionCookie}`);
+    console.log(`LOGIN STATUS: ${sessionCookie.cookie}`);
     if (!sessionCookie) res.json({ status: false });
     else {
         const options = { maxAge: sessionCookie.expiry.expiresIn, httpOnly: true, secure: true };
-        res.cookie('session', sessionCookie, options);
+        res.cookie('session', sessionCookie.cookie, options);
         res.json({ status: true });
     }
 });

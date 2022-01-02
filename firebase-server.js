@@ -35,9 +35,14 @@ export const generateCookie = async (token) => {
 
 export const verifySessionCookie = async (sessionCookie) => {
     try {
+        console.log(sessionCookie);
         if (!sessionCookie) return false;
         const checkCookie = await getAuth().verifySessionCookie(sessionCookie, true);
-        if (checkCookie) return checkCookie;
+        console.log(`SESSION COOKIE: ${checkCookie}`);
+        if (checkCookie) {
+            console.log(checkCookie);
+            return checkCookie;
+        }
         else return false;
     } catch (e) {
         console.log(e);
