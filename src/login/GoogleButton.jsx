@@ -1,55 +1,37 @@
-import { verifyToken } from './requests';
-import { registerUser } from './requests';
-import { GoogleLogin } from 'react-google-login';
-import GoogleButton from 'react-google-button'
-import { loadGoogleScript } from './google.js';
-import { useEffect } from 'react';
+import '../firebase.js';
+import { userLogIn, userLogOut } from '../requests.js';
+import { useEffect } from 'react'
+import { signInWithRedirect, signOut, GoogleAuthProvider, getAuth, onAuthStateChanged } from "firebase/auth";
 
-export default function Button({ token, submit, setToken, setSubmit, setRegister}){
-
-    const onSignIn = async (user) => {
-
-        if(document.readyState !== 'complete') return;
-        
-        const token = user.getAuthResponse().id_token;
-        setToken(token);
-        
-        const profile = user.getBasicProfile();
-        const email = profile.getEmail();
-
-        setSubmit(true);
-        const verify = await verifyToken(token);
-        setSubmit(false);
-        if (verify) window.location.reload();
-        else {
-            if(email.charAt(0) === 's') setRegister(true);
-            else {
-                setSubmit(true);
-                const register = await registerUser(token);
-                if(register) alert('Registration of NON STUDENT Success');
-                else alert('registration of NON STUDENT unsuccessful');
-                setSubmit(false);
-                window.location.reload();
-            }
+export default function NewGoogleButton(){
+    const authObj = getAuth();
+    const signOutUser = async () => {
+        await signOut(authObj);
+        await userLogOut();
+    }
+    const flow = async () => {
+        const provider = new GoogleAuthProvider();
+        try {
+            const a = await signInWithRedirect(authObj, provider);
+            alert(a.user);
+        } catch (e) {
+            alert(e);
         }
     }
 
-    const clientId = '724396208046-174g1j7ib3vhl3foa80j0sd4hvtcv3p9.apps.googleusercontent.com';
+    const authState = (user) => {
+        if (user) userLogIn(user.accessToken);
+        else alert('signed out');
+    }
 
-
-
+    onAuthStateChanged(authObj, authState)
 
     return (
-        <>
-              <GoogleLogin
-      clientId={clientId}
-      style={{width: '700', height: '200'}}
-      buttonText="Logout"
+        <div>
+            <button onClick={flow}>Sign In</button>
+            <button onClick={signOutUser}>Sign Out</button>
+        </div>
 
-    ></GoogleLogin>
-              
-    
-        </>
     )
-
 }
+

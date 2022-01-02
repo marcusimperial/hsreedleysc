@@ -5,7 +5,7 @@ import Page from './404';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import NewGoogleButton from './NewGoogleButton';
+
 import './index.css';
 function App() {
 
@@ -17,7 +17,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route exact path='/login' element={<NewGoogleButton />}/>
+        <Route exact path='/login' element={<Login />}/>
         <Route exact path='/' element={<Navbar />}/>
         <Route path="*" element={<Page/>}/>
       </Routes>
