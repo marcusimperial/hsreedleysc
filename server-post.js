@@ -3,8 +3,7 @@ import { generateCookie, revokeSessionCookie } from './firebase-server.js';
 
 const Router = express.Router();
 const app = express();
-import cookieParser from 'cookie-parser';
-app.use(cookieParser());
+
 Router.post('/login', async (req, res) => {
     const token = req.body.token;
     console.log(token);
@@ -13,7 +12,7 @@ Router.post('/login', async (req, res) => {
     console.log(`LOGIN STATUS: ${sessionCookie.cookie}`);
     if (!sessionCookie) res.json({ status: false });
     else {
-        const options = { maxAge: sessionCookie.expiry.expiresIn, httpOnly: true, secure: true };
+        const options = { maxAge: sessionCookie.expiry.expiresIn, httpOnly: true };
         res.cookie('session', sessionCookie.cookie, options);
         res.json({ status: true });
     }

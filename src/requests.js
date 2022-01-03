@@ -8,7 +8,6 @@ export const userLogIn = async (token) => {
         };
         const response = await fetch('/login', options);
         const data = await response.json();
-        alert(data.status);
         if(data.status) return true;
         else return false;
 

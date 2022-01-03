@@ -62,3 +62,9 @@ export const revokeSessionCookie = async (sessionCookie) => {
         return false;
     }
 }
+
+export const parseCookie = async (req) => {
+    const cookies = req.headers.cookie;
+    if (!cookies || !cookies.includes('session')) return '';
+    return req.headers.cookie.split('session=')[1].split(';')[0];
+}
