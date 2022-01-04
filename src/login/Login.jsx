@@ -21,8 +21,9 @@ export default function Login() {
 
     return (
         <>
+            
+            <GoogleButton setLoader={setLoader} loader={loader} />
             <Loader loader={loader} />
-            <GoogleButton setLoader={setLoader} />
         </>
     )
 }

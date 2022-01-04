@@ -8,11 +8,12 @@ export default function Loader({ loader }) {
     if(loader)
     return (
         <>
-            <div className="space"></div>
-            <div id="loaderdiv">
-                <div className="loader"></div>
-                <label id="sublbl">Please wait a few seconds...</label>
+            <div className="container">
+                <div className="space loader"></div>
+                <h1>Please wait a few seconds...</h1>
             </div>
+
+
         </>
     )
     else return (<></>);

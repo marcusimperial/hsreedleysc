@@ -1,74 +1,56 @@
-#mainlbl {
-  vertical-align: middle;
+.container {
   text-align: center;
+  user-select: none;
+  -webkit-user-select: none; /*Safari*/
+  -moz-user-select: none; /*Firefox*/
+}
+
+.container h1 {
+  color: white;
+}
+
+.title {
+  margin-top: 60px;
+}
+
+.title h1 {
   color: #efecec;
-  text-transform: uppercase;
   text-shadow: 1px 1px 10px black, 1px 1px 10px white;
   font-size: 120px;
   line-height: 110px;
-  margin-top: 60px;
   font-weight: 500;
 }
 
-.login {
-  width: 325px;
-  height: 1000px;
-
+.loginbutton {
+  margin-top: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  outline: none;
+  border: 2px white solid;
+  font: inherit;
+  height: 80px;
+  padding: 5px;
 }
 
-#sublbl {
-  text-shadow: 1px 1px 10px black, 1px 1px 10px black;
-  text-align: center;
-  display: block;
-  margin: auto;
-  color: #efecec;
-  font-size: 30px;
-  line-height: 40px;
+.loginbutton:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  transform: scale(0.98);
 }
 
-.googlebutton {
-  width: 100%;
+.loginbutton h1 {
+  color: white;
+  text-shadow: 1px 1px 10px black, 1px 1px 10px white;
+  display: inline-block;
+  vertical-align: 50%;
 }
 
-.googlebutton > div {
-  margin: 0 auto;
+.loginbutton img {
+  margin-right: 10px;
+  height: 40px;
+  width: 40px;
 }
 
-.seldivs {
-  margin-bottom: 30px;
-}
-
-.selheaders {
-  text-shadow: 1px 1px 10px black, 1px 1px 10px black;
-  text-align: center;
-  display: block;
-  margin: auto;
-  font-size: 35px;
-  line-height: 35px;
-}
-
-.sels {
-  font: 18px/23px "Noir", sans-serif;
-  text-align: center;
-  display: block;
-  margin: auto;
-  width: 300px;
-  height: 50px;
-}
-
-.submit {
-  font: 18px/23px "Noir", sans-serif;
-  text-align: center;
-  display: block;
-  margin: auto;
-  width: 200px;
-  height: 50px;
-  opacity: 0.9;
-}
 
 .loader {
-  text-align: center;
-  display: block;
   margin: auto;
   border: 10px solid #f3f3f3; /* Light grey */
   border-top: 10px solid black; /* Blue */
@@ -77,9 +59,8 @@
   height: 200px;
   animation: spin 500ms linear infinite;
 }
-
 .space {
-  height: 250px;
+  margin-top: 200px;
 }
 
 @keyframes spin {
@@ -92,14 +73,8 @@
 }
 
 @media only screen and (max-width: 767px) {
-  #mainlbl {
-    vertical-align: middle;
-    text-align: center;
-    color: #efecec;
-    text-transform: uppercase;
-    font-size: 80px;
-    line-height: 70px;
-    margin-top: 60px;
-    font-weight: 500;
+  .title h1 {
+
+    font-size: 60px;
   }
 }
