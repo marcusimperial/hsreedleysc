@@ -1,3 +1,11 @@
+body {
+  background-image: url(images/16-9.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
 .container {
   text-align: center;
   user-select: none;
@@ -49,7 +57,6 @@
   width: 40px;
 }
 
-
 .loader {
   margin: auto;
   border: 10px solid #f3f3f3; /* Light grey */
@@ -69,14 +76,5 @@
   }
   100% {
     transform: rotate(360deg);
-  }
-}
-
-@media only screen and (max-width: 767px) {
-  .title h1 {
-    font-size: 120px;
-    line-height: 110px;
-    font-weight: 500;
-    font-size: 80px;
   }
 }

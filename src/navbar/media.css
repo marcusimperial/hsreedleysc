@@ -21,13 +21,13 @@
     display: block;
   }
 
-  .container {
+  .containers {
     margin: inherit;
     overflow: inherit;
     padding: inherit;
   }
 
-  .flex {
+  .flexs {
     display: inherit;
     justify-content: inherit;
     align-items: inherit;

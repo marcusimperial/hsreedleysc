@@ -5,7 +5,7 @@ import Bar from './Bar';
 import { userLogOut } from '../requests.js';
 import { signOut, getAuth } from "firebase/auth";
 
-export function Navbar() {
+export default function Navbar({ events, projects, parties }) {
 
     const signOutUser = async () => {
         const authObj = getAuth();
@@ -22,37 +22,29 @@ export function Navbar() {
 
     const mobile = () => {
         let x = document.querySelector(".myLinks");
-        console.log(x.style.display);
-        
         if (x.style.display === "block") x.style.display = "none";
         else if (x.style.display === "none") x.style.display = "block";
         else x.style.display = "none";
     }
     
     useEffect(() => {
-        import('./main.css');
+        import('./style.css');
         import('./dropdown.css');
         import('./media.css');
-        
-        document.title = 'Home';
         window.onresize = sizing;
     })
 
-
-    const a = [{name: "The Valentine's Day FUndraiser", route: 'sdsd'}]
-
     return (
-        
         <div className="navbar">
-            <div className="container flex">
+            <div className="containers flexs">
                 <button className="mobile" onClick={mobile}><AiOutlineMenu size={30} /></button>
                 <nav className="myLinks">
                     <ul>
-                        <li><Link to="projects.html">HOME</Link></li>
-                        <li><Link to="projects.html">ABOUT</Link></li>
-                        <li><Bar name="EVENTS" pages={a}/></li>
-                        <li><Bar name="PROJECTS" pages={a}/></li>
-                        <li><Bar name="PARTIES" pages={a}/></li>
+                        <li><Link to="/">HOME</Link></li>
+                        <li><a href="/admin">ADMIN</a></li>
+                        <Bar name="EVENTS" pages={events}/>
+                        <Bar name="PROJECTS" pages={projects}/>
+                        <Bar name="PARTIES" pages={parties}/>
                         <li><button onClick={signOutUser}>SIGN OUT</button></li>
                     </ul>
                 </nav>

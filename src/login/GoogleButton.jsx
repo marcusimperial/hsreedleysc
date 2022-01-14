@@ -1,15 +1,13 @@
-import '../firebase.js';
-import { userLogIn, userLogOut } from '../requests.js';
+import { userLogIn } from '../requests.js';
 import { useEffect } from 'react'
-import { signInWithRedirect, signOut, GoogleAuthProvider, getAuth, getRedirectResult } from "firebase/auth";
+import { signInWithRedirect, GoogleAuthProvider, getAuth, getRedirectResult } from "firebase/auth";
 
 export default function NewGoogleButton({ setLoader, loader }){
     const auth = getAuth();
     const flow = async () => {
         const provider = new GoogleAuthProvider();
         try {
-            const a = await signInWithRedirect(auth, provider);
-            alert(a.user);
+           await signInWithRedirect(auth, provider);
         } catch (e) {
             alert(e);
         }
@@ -19,6 +17,8 @@ export default function NewGoogleButton({ setLoader, loader }){
         const renderResult = async () => {
             const result = await getRedirectResult(auth);
             if (!result) return;
+
+            if (!result.user.email.includes('risfamily')) return alert('Error: Email is not an Risfamily Email.');
             setLoader(true);
             const login = await userLogIn(result.user.accessToken);
             if (login) window.location.replace('/');
@@ -35,7 +35,7 @@ export default function NewGoogleButton({ setLoader, loader }){
                   <h1>SC WEBSITE</h1>
               </div>
             <button onClick={flow} className="loginbutton">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt=""/>
                 <h1>Sign in with Google</h1>
             </button>
           </section>

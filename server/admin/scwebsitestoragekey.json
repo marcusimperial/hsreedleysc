@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "the-sc-website",
+  "private_key_id": "d64f614fd5568a293c884b23a04f242123236e15",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCrAV2DVGwduhgF\nDMNIOxpZyXTwEU+MM8S0+Q4C5nyjKLrHJo/VzDJ9Quj7UDWOFA7ZM2UuIvG/WjQf\n/F5G8rhVjKjudFSKsooOrJUpMrTXw608DpXMLHeGGgeAJTu4z/UHHiuxO6cJK1i8\nJzr8jxBPu/J30kz4TCuIl3oLVU8iRJSkb7Csb+1kM3Se1NqJQQbVNUd67RkwmKIL\nY4go22Q83O997NrGTg1KY8KjPLLrnFm9sNHxOr7KXphQFAUWMmYBtKM+Is2bo06H\nPxtDLUJ5M8kes4sf2YZh0Qg+D4EhQyTFTBXcSKFchdJdww2+Jp9yKgEdlDmpxR8Q\ncTUTPY5HAgMBAAECggEANyBmi/rAK8kdCyu1HGjpMr6t8uIxuanKpOiQ6sBwt4xe\nweqdfbepIxZZ0wJlcVrn+n8GBByBwEUM/q61mbuPTwzcPJrF0jyCIv7hyvkssU3E\nX9L32W0QTuu/NUFLgmWPwO6p+SWY0Gzn2yfubRKVmI6nOJdT9stfUVY7osGqlAnu\nWgNkpudlv2BDt7mXEQSaHnWIBpizenMuD0+t17EgnqvxIc8IY96lMYjtE/cNqRp3\nBYod0wGVnD8/Je+yzBe7asanenWAB0o9jnDegYuxlQqlGecanq7uAx0ZJif+QFsf\nmFCV4NQkBd8Ll5OeA2l3dg3WKSOaBY/SPtLNwN2EyQKBgQDjx2L73TYnA7Vth5cE\nHauo5+dNJ5naGD6r6ubtdT5vVCjZEb9R6LDnmHiJp1HrLXuiw9EZv5HneGezzIMX\n7XkFXMemaRgfICFiTVmTiQrXFj8/3xYsbae+u/EiZtJBs5HIZSAPkE+XwWMWqR1u\ncPsyvsXqgmV9PBJuthTrL9Ru8wKBgQDAMUFPo7Agtp8FjVHk4XzgWxD/i+Q9a86C\ntGRz7yhJ3XbKAJ+m58eeBD3avOHB6ZQa9HrmaFC0i72uvFAUEeaqWNQxWMSdMZn6\nLUogtrojKL3QKe9AZ9lKq7CEMoQwYwZvr2d1BMi3SBiALa7fZqumezlie/7rbduA\nfo3RFXnAXQKBgDT23P5hzsC9rQc9+xCa8ZqB6hfXuH+tGY2SPoZCt/TdJe5roQgj\nylbf7k9b18GOvuv3Cn0pPX0MU1jMmkMLFhP4IfiBAXnjV7/q6oRS3nFrG+P3NMm5\n6cKBIy3zqLpcTe7CDPVxggBwmGDhjBVtMgv3rj+8eGrpeAPEVRLm+UefAoGAGINv\nyB+hrFp+p++hfWcBTYBwB5gpMWhZu7QUh/D+G4XCy/sOYfR4MoBp/0dOKDSJrnJ2\nZoLxoEWemPXt5NFvsVSJJA4lbcNQ12cFaGzGCwv8QdvHZ1iXj32ckw/6ak2HGaGu\nuW81xqLMdTTedCIdTKu04wnbtt2ZPKdnoT5y/AUCgYEAyvVkHhWA/k1uCSfDbXsr\nuz4Z0nM01z/Elp9ey8HMOP4sL4kVV1sB4DlyS4tpxTiqFmuHymQ8t7hZ7boCe0oG\ngHF63+BWjSL0nxdKgqDtGPX3L1Tmi8eVM8I32CPWKtiXQifXhfEssEwwdMhPwrPo\nW43sjqD7ZNZX/QlkxMdL29c=\n-----END PRIVATE KEY-----\n",
+  "client_email": "scwebsitestorage@the-sc-website.iam.gserviceaccount.com",
+  "client_id": "102888568544792183830",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/scwebsitestorage%40the-sc-website.iam.gserviceaccount.com"
+}

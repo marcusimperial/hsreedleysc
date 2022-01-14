@@ -1,11 +1,4 @@
-import { createRequire } from 'module';
-import { initializeApp, cert } from 'firebase-admin/app';
 import { getAuth } from 'firebase-admin/auth';
-
-const require = createRequire(import.meta.url);
-const service = require('./firebase-service-account.json');
-
-initializeApp({ credential: cert(service) });
 
 const verifyToken = async (token) => {
     try {
@@ -35,14 +28,9 @@ export const generateCookie = async (token) => {
 
 export const verifySessionCookie = async (sessionCookie) => {
     try {
-        console.log(sessionCookie);
         if (!sessionCookie) return false;
         const checkCookie = await getAuth().verifySessionCookie(sessionCookie, true);
-        console.log(`SESSION COOKIE: ${checkCookie}`);
-        if (checkCookie) {
-            console.log(checkCookie);
-            return checkCookie;
-        }
+        if (checkCookie) return checkCookie;
         else return false;
     } catch (e) {
         console.log(e);
@@ -61,10 +49,4 @@ export const revokeSessionCookie = async (sessionCookie) => {
         console.log(e);
         return false;
     }
-}
-
-export const parseCookie = async (req) => {
-    const cookies = req.headers.cookie;
-    if (!cookies || !cookies.includes('session')) return '';
-    return req.headers.cookie.split('session=')[1].split(';')[0];
 }
