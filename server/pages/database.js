@@ -38,7 +38,7 @@ export const getPages = async () => {
     const postsQuery = await queryDatabase('riscouncil', 'posts');
 
     for (const data of pageQuery) {
-        const posts = postsQuery.filter(post => post.route === data.route);
+        const posts = postsQuery.filter(post => post.route === data.route).reverse();
         pages.push({ data, posts })
     }
     return pages;
