@@ -1,0 +1,47 @@
+.frontpage {
+  background-image: url(images/16-9.jpg);
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+}
+
+.center {
+  text-align: center;
+}
+
+.glow {
+  color: #efecec;
+  text-shadow: 1px 1px 10px black, 1px 1px 10px white;
+}
+
+.frontpage h1 {
+  height: 120px;
+  font-size: 140px;
+  margin: 0;
+  line-height: 1;
+}
+
+.frontpage h2 {
+  font-size: 20px;
+  margin: 0;
+  line-height: 1;
+}
+
+.vertical-center {
+  padding: 35vh 0;
+}
+
+@media only screen and (max-width: 767px) {
+  .frontpage {
+    background: url(images/9-16.jpg);
+    background-size: cover;
+  }
+
+  .frontpage h1 {
+    font-size: 80px;
+  }
+
+  .frontpage h2 {
+    font-size: 12px;
+  }
+}

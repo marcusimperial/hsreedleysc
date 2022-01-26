@@ -1,0 +1,60 @@
+@media only screen and (max-width: 767px) {
+  body:before {
+    content: "";
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    background-image: none;
+  }
+
+  .navbar {
+    background-color: var(--dark);
+    position: relative;
+    height: auto;
+  }
+
+  .navbar ul {
+    display: block;
+  }
+
+  .containers {
+    margin: inherit;
+    overflow: inherit;
+    padding: inherit;
+  }
+
+  .flexs {
+    display: inherit;
+    justify-content: inherit;
+    align-items: inherit;
+    height: inherit;
+  }
+
+  .navbar a,
+  button {
+    cursor: pointer;
+    color: var(--light);
+    padding: 14px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .navbar button:hover,
+  a:hover {
+    color: var(--mid);
+    border-bottom: 2px var(--dark) solid;
+  }
+
+  .mobile {
+    display: block;
+  }
+
+  .dropdown-content {
+    margin-top: 0px;
+    margin-left: 20px;
+  }
+}

@@ -1,0 +1,46 @@
+.dropdown .dropbtn {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  color: var(--dark);
+  background-color: inherit;
+  font-family: inherit;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  overflow: auto;
+  color: var(--light);
+  background-color: var(--dark);
+  height: 150px;
+  margin-top: 20px;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.dropdown-content::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.dropdown-content {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.dropdown-content a {
+  float: none;
+  color: var(--light);
+  font-size: 20px;
+  padding: 10px 10px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.show {
+  display: block;
+}
