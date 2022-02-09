@@ -4,6 +4,7 @@ import path, { dirname } from 'path';
 import Admin from './server/server-admin.js';
 import Main from './server/server-main.js';
 import Pages from './server/server-pages.js';
+import Store from './server/server-store.js';
 import cookieParser from 'cookie-parser';
 import fileUploader from 'express-fileupload';
 const __filename = fileURLToPath(import.meta.url);
@@ -18,7 +19,8 @@ app.use(express.static(path.join(__dirname, '/build'), { index: false }));
 app.use(cookieParser());
 app.use(fileUploader());
 app.use(Admin);
+app.use(Store);
 app.use(Main);
 app.use(Pages);
 
-app.listen(PORT, () => console.log(`Listening on ${PORT}`));
+app.listen(PORT);
