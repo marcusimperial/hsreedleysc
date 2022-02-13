@@ -1,12 +1,8 @@
-import { createRequire } from 'module';
-import { initializeApp, cert } from 'firebase-admin/app';
+import { initializeApp } from 'firebase-admin/app';
 import { getAuth } from 'firebase-admin/auth';
 import { findUser } from './database.js';
 
-const require = createRequire(import.meta.url);
-const service = require('../../firebase-service-account.json');
-
-initializeApp({ credential: cert(service) });
+initializeApp(); // initialized using ADC
 
 export const adminVerifySessionCookie = async (sessionCookie) => {
     try {

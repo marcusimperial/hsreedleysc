@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import express from 'express';
 import { fileURLToPath } from 'url';
 import path, { dirname } from 'path';
@@ -21,4 +22,4 @@ app.use(Admin);
 app.use(Main);
 app.use(Pages);
 
-app.listen(PORT, () => console.log(`Listening on ${PORT}`));
+app.listen(PORT);

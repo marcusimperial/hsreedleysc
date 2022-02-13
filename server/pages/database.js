@@ -1,7 +1,5 @@
 import { MongoClient } from 'mongodb';
 
-import {} from 'dotenv/config';
-
 const uri = process.env.MONGODB_URI;
 
 const findPage = async (page) => {

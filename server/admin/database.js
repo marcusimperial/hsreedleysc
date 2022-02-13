@@ -1,5 +1,4 @@
 import { MongoClient } from 'mongodb';
-import {} from 'dotenv/config';
 const uri = process.env.MONGODB_URI;
 
 export const addPage = async (title, description, route, type) => {
