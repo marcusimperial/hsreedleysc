@@ -42,6 +42,10 @@ In cloning any NodeJS project, ensure that you type **npm install** in the comma
 
     npm install
 
+Create a build of the react project to create the website.
+
+    npm run build
+
 In order to test the codebase in a local environment, you must first create a .env file and ensure that all firebase configuration variables (REACT_APP_FIREBASE_XX) of the frontend app, the MONGODB_URI of the database, and the GOOGLE_APPLICATION_CREDENTIALS of the service account for the firebase admin app are set. 
 
 Since this project relies on **Google's Application Default Credentials (ADC)**, you must perform the following commands in order to ensure all of google's services are authenticated.
