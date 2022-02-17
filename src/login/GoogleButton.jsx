@@ -6,6 +6,8 @@ export default function NewGoogleButton({ setLoader, loader }){
     const auth = getAuth();
     const flow = async () => {
         const provider = new GoogleAuthProvider();
+        provider.addScope('https://www.googleapis.com/auth/drive.file');
+        provider.addScope('https://www.googleapis.com/auth/drive.photos.readonly');
         try {
            await signInWithRedirect(auth, provider);
         } catch (e) {
@@ -17,6 +19,8 @@ export default function NewGoogleButton({ setLoader, loader }){
         const renderResult = async () => {
             const result = await getRedirectResult(auth);
             if (!result) return;
+            const credential = GoogleAuthProvider.credentialFromResult(result);
+            console.log(credential.accessToken);
 
             if (!result.user.email.includes('risfamily')) return alert('Error: Email is not an Risfamily Email.');
             setLoader(true);
