@@ -20,6 +20,7 @@ export default function NewGoogleButton({ setLoader, loader }){
             const result = await getRedirectResult(auth);
             if (!result) return;
             const credential = GoogleAuthProvider.credentialFromResult(result);
+            console.log(credential);
             console.log(credential.accessToken);
 
             if (!result.user.email.includes('risfamily')) return alert('Error: Email is not an Risfamily Email.');
